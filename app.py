@@ -1,0 +1,170 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "a5d951f3-45a1-42ca-a7c3-a8b7da7426c5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Requirement already satisfied: streamlit in c:\\users\\dell\\anaconda3\\lib\\site-packages (1.37.1)\n",
+      "Requirement already satisfied: altair<6,>=4.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (5.0.1)\n",
+      "Requirement already satisfied: blinker<2,>=1.0.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (1.6.2)\n",
+      "Requirement already satisfied: cachetools<6,>=4.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (5.3.3)\n",
+      "Requirement already satisfied: click<9,>=7.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (8.1.7)\n",
+      "Requirement already satisfied: numpy<3,>=1.20 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (1.26.4)\n",
+      "Requirement already satisfied: packaging<25,>=20 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (24.1)\n",
+      "Requirement already satisfied: pandas<3,>=1.3.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (2.2.2)\n",
+      "Requirement already satisfied: pillow<11,>=7.1.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (10.4.0)\n",
+      "Requirement already satisfied: protobuf<6,>=3.20 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (4.25.3)\n",
+      "Requirement already satisfied: pyarrow>=7.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (16.1.0)\n",
+      "Requirement already satisfied: requests<3,>=2.27 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (2.32.3)\n",
+      "Requirement already satisfied: rich<14,>=10.14.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (13.7.1)\n",
+      "Requirement already satisfied: tenacity<9,>=8.1.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (8.2.3)\n",
+      "Requirement already satisfied: toml<2,>=0.10.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (0.10.2)\n",
+      "Requirement already satisfied: typing-extensions<5,>=4.3.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (4.11.0)\n",
+      "Requirement already satisfied: gitpython!=3.1.19,<4,>=3.0.7 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (3.1.43)\n",
+      "Requirement already satisfied: pydeck<1,>=0.8.0b4 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (0.8.0)\n",
+      "Requirement already satisfied: tornado<7,>=6.0.3 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (6.4.1)\n",
+      "Requirement already satisfied: watchdog<5,>=2.1.5 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from streamlit) (4.0.1)\n",
+      "Requirement already satisfied: jinja2 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from altair<6,>=4.0->streamlit) (3.1.4)\n",
+      "Requirement already satisfied: jsonschema>=3.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from altair<6,>=4.0->streamlit) (4.23.0)\n",
+      "Requirement already satisfied: toolz in c:\\users\\dell\\anaconda3\\lib\\site-packages (from altair<6,>=4.0->streamlit) (0.12.0)\n",
+      "Requirement already satisfied: colorama in c:\\users\\dell\\anaconda3\\lib\\site-packages (from click<9,>=7.0->streamlit) (0.4.6)\n",
+      "Requirement already satisfied: gitdb<5,>=4.0.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from gitpython!=3.1.19,<4,>=3.0.7->streamlit) (4.0.7)\n",
+      "Requirement already satisfied: python-dateutil>=2.8.2 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from pandas<3,>=1.3.0->streamlit) (2.9.0.post0)\n",
+      "Requirement already satisfied: pytz>=2020.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from pandas<3,>=1.3.0->streamlit) (2024.1)\n",
+      "Requirement already satisfied: tzdata>=2022.7 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from pandas<3,>=1.3.0->streamlit) (2023.3)\n",
+      "Requirement already satisfied: charset-normalizer<4,>=2 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->streamlit) (3.3.2)\n",
+      "Requirement already satisfied: idna<4,>=2.5 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->streamlit) (3.7)\n",
+      "Requirement already satisfied: urllib3<3,>=1.21.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->streamlit) (2.2.3)\n",
+      "Requirement already satisfied: certifi>=2017.4.17 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from requests<3,>=2.27->streamlit) (2025.4.26)\n",
+      "Requirement already satisfied: markdown-it-py>=2.2.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from rich<14,>=10.14.0->streamlit) (2.2.0)\n",
+      "Requirement already satisfied: pygments<3.0.0,>=2.13.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from rich<14,>=10.14.0->streamlit) (2.15.1)\n",
+      "Requirement already satisfied: smmap<5,>=3.0.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from gitdb<5,>=4.0.1->gitpython!=3.1.19,<4,>=3.0.7->streamlit) (4.0.0)\n",
+      "Requirement already satisfied: MarkupSafe>=2.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from jinja2->altair<6,>=4.0->streamlit) (2.1.3)\n",
+      "Requirement already satisfied: attrs>=22.2.0 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (23.1.0)\n",
+      "Requirement already satisfied: jsonschema-specifications>=2023.03.6 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (2023.7.1)\n",
+      "Requirement already satisfied: referencing>=0.28.4 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (0.30.2)\n",
+      "Requirement already satisfied: rpds-py>=0.7.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from jsonschema>=3.0->altair<6,>=4.0->streamlit) (0.10.6)\n",
+      "Requirement already satisfied: mdurl~=0.1 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from markdown-it-py>=2.2.0->rich<14,>=10.14.0->streamlit) (0.1.0)\n",
+      "Requirement already satisfied: six>=1.5 in c:\\users\\dell\\anaconda3\\lib\\site-packages (from python-dateutil>=2.8.2->pandas<3,>=1.3.0->streamlit) (1.16.0)\n",
+      "Note: you may need to restart the kernel to use updated packages.\n"
+     ]
+    }
+   ],
+   "source": [
+    "pip install streamlit\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "5daa758a-a018-4047-bd11-ab2496430c06",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "2025-05-15 02:27:24.105 \n",
+      "  \u001b[33m\u001b[1mWarning:\u001b[0m to view this Streamlit app on a browser, run it with the following\n",
+      "  command:\n",
+      "\n",
+      "    streamlit run C:\\Users\\DELL\\anaconda3\\Lib\\site-packages\\ipykernel_launcher.py [ARGUMENTS]\n"
+     ]
+    }
+   ],
+   "source": [
+    "import streamlit as st\n",
+    "import pandas as pd\n",
+    "import joblib\n",
+    "from pulp import LpMaximize, LpProblem, LpVariable, lpSum\n",
+    "from sklearn.preprocessing import StandardScaler\n",
+    "\n",
+    "# Load model and scaler\n",
+    "model = joblib.load('budget_predictor_rf.pkl')\n",
+    "scaler = joblib.load('scaler.pkl')\n",
+    "\n",
+    "st.title(\"College Budget Predictor & Optimizer\")\n",
+    "\n",
+    "uploaded_file = st.file_uploader(\"Upload College CSV Data\", type=[\"csv\"])\n",
+    "\n",
+    "if uploaded_file is not None:\n",
+    "    df = pd.read_csv(uploaded_file)\n",
+    "\n",
+    "    # Feature Engineering\n",
+    "    df['Budget_per_Student'] = df['Total_Budget'] / df['Enrollment']\n",
+    "    df['Student_Faculty_Ratio'] = df['Enrollment'] / df['Faculty_Count']\n",
+    "    df = pd.get_dummies(df, columns=['State', 'College_Type'], drop_first=True)\n",
+    "\n",
+    "    # Align columns\n",
+    "    model_features = model.feature_names_in_\n",
+    "    for col in model_features:\n",
+    "        if col not in df.columns:\n",
+    "            df[col] = 0\n",
+    "    df = df[model_features]\n",
+    "\n",
+    "    # Predict\n",
+    "    scaled = scaler.transform(df)\n",
+    "    predictions = model.predict(scaled)\n",
+    "\n",
+    "    # Display predictions\n",
+    "    df_results = pd.DataFrame({\n",
+    "        \"College\": df.get('College_Name', range(len(predictions))),\n",
+    "        \"Predicted_Budget\": predictions\n",
+    "    })\n",
+    "\n",
+    "    st.write(\"### Predicted Budgets\")\n",
+    "    st.dataframe(df_results)\n",
+    "\n",
+    "    # Optimization Section\n",
+    "    st.write(\"### Budget Allocation Optimization\")\n",
+    "    total_extra_budget = st.number_input(\"Total Extra Budget Available\", value=100_000_000)\n",
+    "\n",
+    "    df_orig = pd.read_csv(uploaded_file)\n",
+    "    df_orig['Predicted_Budget'] = predictions\n",
+    "    df_orig['Budget_Deficit'] = df_orig['Predicted_Budget'] - df_orig['Total_Budget']\n",
+    "    df_deficit = df_orig[df_orig['Budget_Deficit'] > 0].copy()\n",
+    "\n",
+    "    college_names = df_deficit['College_Name'].tolist()\n",
+    "    model_lp = LpProblem(\"budget-allocation\", LpMaximize)\n",
+    "    alloc_vars = {name: LpVariable(name=f\"alloc_{i}\", lowBound=0) for i, name in enumerate(college_names)}\n",
+    "\n",
+    "    model_lp += lpSum([alloc_vars[name] for name in college_names]), \"Total_Allocated\"\n",
+    "    model_lp += lpSum([alloc_vars[name] for name in college_names]) <= total_extra_budget, \"Budget_Limit\"\n",
+    "    model_lp.solve()\n",
+    "\n",
+    "    df_deficit['Optimized_Allocation'] = [alloc_vars[name].value() for name in college_names]\n",
+    "\n",
+    "    st.write(\"### Optimized Allocations\")\n",
+    "    st.dataframe(df_deficit[['College_Name', 'Budget_Deficit', 'Optimized_Allocation']].sort_values(by='Optimized_Allocation', ascending=False))\n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python [conda env:base] *",
+   "language": "python",
+   "name": "conda-base-py"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

@@ -1,0 +1,51 @@
+College_Name,State,College_Type,Enrollment,Faculty_Count,Total_Budget,Year
+College_1,Delhi,Private,879,380,37986527,2000
+College_2,West Bengal,Government,992,177,6119043,2000
+College_3,Karnataka,Private,2562,397,16718070,2000
+College_4,West Bengal,Government,4384,280,49149943,2001
+College_5,West Bengal,Private,564,239,19012538,2002
+College_6,Tamil Nadu,Government,3068,274,38436048,2000
+College_7,Karnataka,Private,2527,332,45657662,2000
+College_8,Karnataka,Government,3195,170,31906917,2000
+College_9,Karnataka,Government,1995,165,41112663,2000
+College_10,West Bengal,Private,891,282,11659908,2000
+College_11,Delhi,Government,4974,308,36378291,2000
+College_12,Karnataka,Private,4061,247,41634821,2003
+College_13,West Bengal,Private,2778,186,40216341,2000
+College_14,Tamil Nadu,Private,3599,367,24433354,2000
+College_15,Delhi,Private,700,214,21887294,2000
+College_16,Tamil Nadu,Private,3604,274,11314127,2004
+College_17,Delhi,Private,2954,356,35827104,2000
+College_18,West Bengal,Private,4145,283,48347144,2000
+College_19,Maharashtra,Private,1304,221,40562619,2000
+College_20,Delhi,Private,3231,201,40213498,2000
+College_21,Tamil Nadu,Private,3273,364,40703247,2005
+College_22,West Bengal,Private,2070,209,45910172,2000
+College_23,Delhi,Government,3190,145,29435642,2000
+College_24,Maharashtra,Government,4340,282,11404003,2021
+College_25,Maharashtra,Private,1528,229,9135314,2024
+College_26,Karnataka,Private,1002,162,39465113,2025
+College_27,Karnataka,Private,4993,367,38267858,2006
+College_28,Tamil Nadu,Private,1370,101,26114003,2009
+College_29,Delhi,Private,4988,317,24532639,2000
+College_30,Delhi,Private,706,344,15421958,2023
+College_31,Karnataka,Private,1984,162,15700595,2000
+College_32,Delhi,Private,1363,150,17984808,2008
+College_33,Delhi,Government,3290,162,19764960,2007
+College_34,Maharashtra,Private,1063,130,34837223,2000
+College_35,Karnataka,Government,4691,236,14132582,2000
+College_36,West Bengal,Private,2257,162,46167719,2013
+College_37,Karnataka,Private,2178,51,21385802,2017
+College_38,West Bengal,Government,3742,179,8612600,2000
+College_39,Maharashtra,Private,1559,269,22603032,2012
+College_40,Tamil Nadu,Government,2222,103,30540529,2000
+College_41,Delhi,Private,3814,392,17105878,2018
+College_42,Maharashtra,Private,3657,273,48799966,2011
+College_43,Delhi,Government,3125,274,15047453,2016
+College_44,Tamil Nadu,Private,3229,175,40581225,2000
+College_45,Tamil Nadu,Government,2097,179,39109026,2010
+College_46,Maharashtra,Private,3560,102,47090758,2019
+College_47,Tamil Nadu,Government,3193,221,21037627,2014
+College_48,West Bengal,Government,4127,267,18228175,2015
+College_49,Tamil Nadu,Private,1863,209,25281689,2020
+College_50,Delhi,Private,2481,247,40759096,2000
